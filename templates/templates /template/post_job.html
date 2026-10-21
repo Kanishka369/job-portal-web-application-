@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post a Job</title>
+</head>
+<body>
+    <h1>Post a New Job</h1>
+
+    {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    <form method="POST">
+        <p>Job Title</p>
+        <input name="title" required>
+
+        <p>Company</p>
+        <input name="company" required>
+
+        <p>Location</p>
+        <input name="location" required>
+
+        <p>Category</p>
+        <input name="category" required>
+
+        <p>Salary</p>
+        <input name="salary">
+
+        <p>Job Description</p>
+        <textarea name="description" required></textarea>
+
+        <p><button type="submit">Publish Job</button></p>
+    </form>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
