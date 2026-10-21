@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <h2 style="color:white;">JobConnect</h2>
+        <p>Find your next opportunity</p>
+    </header>
+
+    <main class="container">
+        <h1>Find Your Dream Job</h1>
+        <p>Explore opportunities and take the next step in your career.</p>
+
+        <form action="/" method="GET" class="card">
+            <input type="text" name="keyword" placeholder="Job title or company">
+            <input type="text" name="location" placeholder="Location">
+            <input type="text" name="category" placeholder="Category">
+            <button type="submit">Search Jobs</button>
+        </form>
+
+        <section>
+            <h2>Latest Jobs</h2>
+
+            {% for job in jobs %}
+            <div class="card">
+                <h3>{{ job.title }}</h3>
+                <p><strong>Company:</strong> {{ job.company }}</p>
+                <p><strong>Location:</strong> {{ job.location }}</p>
+                <p><strong>Category:</strong> {{ job.category }}</p>
+                <p><strong>Salary:</strong> {{ job.salary or 'Not specified' }}</p>
+                <p>{{ job.description }}</p>
+            </div>
+            {% else %}
+            <div class="card">
+                <p>No jobs available yet. Check back soon!</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
