@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register - JobConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <h2 style="color:white;">JobConnect</h2>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h1>Create Account</h1>
+
+            {% for message in get_flashed_messages() %}
+                <p class="message">{{ message }}</p>
+            {% endfor %}
+
+            <form method="POST">
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Password (minimum 8 characters)</label>
+                <input type="password" name="password" minlength="8" required>
+
+                <label>Account Type</label>
+                <select name="role" required>
+                    <option value="seeker">Job Seeker</option>
+                    <option value="employer">Employer</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p>Already registered? <a href="/login">Login here</a></p>
+            <p><a href="/">Back to Home</a></p>
+        </div>
+    </main>
+</body>
+</html>
