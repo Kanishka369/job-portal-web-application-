@@ -1,0 +1,32 @@
+Job Portal Web Application
+
+Project Description
+
+A web application that helps job seekers find jobs and employers post job openings.
+
+Technologies Used
+
+- Python
+- Flask
+- HTML
+- CSS
+
+Project Structure
+
+- "app.py" – Main Flask application
+- "templates/" – HTML pages
+- "static/style.css" – CSS styling
+- "requirements.txt" – Python dependencies
+
+How to Run
+
+1. Install Python.
+2. Install dependencies using "pip install -r requirements.txt".
+3. Run the application using "python app.py".
+4. Open the local URL shown in the terminal.
+
+Features
+
+- User registration and login pages
+- Job posting page
+- Home page
